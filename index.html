@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head> 
+		<title>Bouncing Ball Logos</title> 
+	  <meta charset="utf-8"> 
+		<link rel="stylesheet" href="css/main.css" />
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="js/modernizr-1.5.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<aside>
+			<header>
+				<h1>Bouncing ball logos</h1>
+				<p>Published <time datetime="2010-10-13" pubdate>13 October 2010</time></p>
+				<p>A canvas experiment based on Google's &#147;bouncing balls&#148; doodle. For more details please see my <a href="http://jadimmock.com/">blog post</a>.</p>
+			</header>
+			
+			<section>
+				<header>
+					<h2>Controls</h2>
+				</header>
+				<form id="controls" action="#">
+					<label for="image">Image</label>
+					<select name="image" id="image">
+						<option value="facebook.jpg" data-maxLength="24" data-spacing="17" data-size="3" data-variance="50">Facebook</option>
+						<option value="flickr.png" data-maxLength="68" data-spacing="14" data-size="1">Flickr</option>
+						<option value="google.jpg" data-maxLength="61" data-spacing="14" data-size="4" data-variance="80">Google</option>
+						<option value="ocado.jpg" data-maxLength="24" data-spacing="14" data-size="4">Ocado</option>
+						<option value="xx.jpg" data-maxLength="24" data-spacing="14" data-size="2" data-variance="80">The xx</option>
+						<option value="twitter.png" data-maxLength="68" data-spacing="14" data-size="4">Twitter</option>
+					</select>
+					
+					<label for="maxLength">Number of balls</label>
+					<input type="range" id="maxLength" name="maxLength" class="redraw" min="1" max="100" step="1" />
+					
+					<label for="ballSize">Ball size</label>
+					<input type="range" id="ballSize" name="ballSize" class="redraw" min="1" max="20" step="1" />
+					
+					<label for="spacing">Spacing</label>
+					<input type="range" id="spacing" name="spacing" class="redraw" min="1" max="20" step="1" />
+					
+					<label for="variance">Variance</label>
+					<input type="range" id="variance" name="variance" class="redraw" min="0" max="100" step="1" />
+					
+					<label for="friction">Friction</label>
+					<input type="range" id="friction" name="friction" min="0" max="1.0" step="0.1" value="0.2" />
+				</form>
+			</section>
+			
+			<section>
+				<header>
+					<h2>With thanks to</h2>
+				</header>
+				<ul>
+					<li><a href="http://facebook.com">Facebook</a>, <a href="http://flickr.com">Flickr</a>, <a href="http://google.com">Google</a>, <a href="http://ocado.com">Ocado</a>, <a href="http://twitter.com">Twitter</a> and <a href="http://thexx.info">The xx</a> for their respective logos and album artwork.</li>
+					<li><a href="http://google.com">Google</a> for their original bouncing balls doodle.</li>
+					<li>Rob Hawkes for his <a href="http://rawkes.com/experiments/google-bouncing-balls-canvas/">canvas implementation</a> of the doodle upon which this experiment is based.</li>
+				</ul>
+			</section>
+		</aside>
+		<section id="canvasNotSupportedMessage">
+			<header><h2>Doh! Your browser doesn't appear to support this experiment!</h2></header>
+			<p>Unfortunately this experiment requires your web browser to support the &lt;canvas&gt; element. Have no fear! There are many fine browsers you can use! How about giving one of the following a try:</p>
+			<ul id="browserLogos">
+				<li><a href="http://www.google.com/chrome" title="Visit Google Chrome's homepage"><img src="images/browserLogos/chrome.png" alt="Google Chrome"></a></li>
+				<li><a href="http://www.opera.com" title="Visit Opera's homepage"><img src="images/browserLogos/opera.png" alt="Opera"></a></li>
+				<li><a href="http://www.apple.com/safari" title="Visit Safari's homepage"><img src="images/browserLogos/safari.png" alt="Safari"></a></li>
+			</ul>
+			<p>(Thanks to <a href="http://paulirish.com/2010/high-res-browser-icons/">Paul Irish</a> for the icons)</p>
+		</section>
+		<canvas id="c"></canvas>
+		
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-394216-2']);
+		  _gaq.push(['_trackPageview']);
+		 
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</body> 
+</html> 

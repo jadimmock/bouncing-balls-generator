@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+img {
+	border: 0;	
+}
+
+body {
+	color: #bbb;
+	font-family: Helvetica Neue, Verdana, sans-serif;
+	font-size: 13px;
+}
+
+section, header {
+	margin-bottom: 2em;	
+	display: block;
+}
+
+	section header {
+		margin-bottom: 0.5em;	
+	}
+	
+	section ul {
+		list-style: none;
+	}
+	
+	section li {
+		margin: 0.5em 0;
+	}
+
+h1 {
+	font-size: 1.2em;	
+}
+
+h2 {
+	font-size: 1.1em;	
+}
+
+p {
+	line-height: 1.4em;
+	margin: 0 0 0.4em;
+}
+
+a, a:visited {
+	color: #749EB4;
+	text-decoration: none;
+}
+
+	a:hover {
+		border-bottom: 2px solid #749EB4;
+	}
+
+label {
+	display: block;
+	margin: 0 0 0.1em;
+}
+
+input, select {
+	margin: 0 0 10px;	
+}
+
+input[type=range] {
+	width: 200px;
+}
+
+canvas, aside {
+	position: absolute;
+	width: auto;
+}
+
+aside {
+	width: 250px;
+	z-index: 1;
+	padding: 10px;
+}
+
+#canvasNotSupportedMessage {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -75px;
+	margin-top: -150px;
+	width: 400px;
+	height: 300px;
+}
+
+ul#browserLogos {
+	margin: 2em auto;
+	width: 260px;
+}
+
+	ul#browserLogos li {
+		display: inline;
+		margin: 0 10px;
+	}
+
+	ul#browserLogos span {
+		display: block;
+		text-align: center;
+	}
