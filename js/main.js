@@ -52,6 +52,15 @@ $(function() {
 	 */
 	function initEventListeners() {
 		$(window).bind('mousemove', onMove);
+        
+        canvas.get(0).ontouchmove = function(e) {
+            e.preventDefault();
+            onTouchMove(e);
+        };
+        
+        canvas.get(0).ontouchstart = function(e) {
+            e.preventDefault();
+        };
 		
 		$('#controls input.redraw').change(function() {
 			updatePageFragment(this.id, $(this).val());
@@ -147,6 +156,11 @@ $(function() {
 		if (pointCollection)
 			pointCollection.mousePos.set(e.pageX, e.pageY);
 	};
+    
+    function onTouchMove(e) {
+        if (pointCollection)
+            pointCollection.mousePos.set(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+    };
 	
 	function timeout() {
 		draw();
