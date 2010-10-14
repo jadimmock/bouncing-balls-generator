@@ -53,13 +53,18 @@ $(function() {
 	function initEventListeners() {
 		$(window).bind('mousemove', onMove);
         
-        canvas.get(0).ontouchmove = function(e) {
+        canvas[0].ontouchmove = function(e) {
             e.preventDefault();
             onTouchMove(e);
         };
         
-        canvas.get(0).ontouchstart = function(e) {
+        canvas[0].ontouchstart = function(e) {
             e.preventDefault();
+        };
+        
+        canvas[0].ontouchend = function(e) {
+        	e.preventDefault();
+        	onTouchEnd(e);
         };
 		
 		$('#controls input.redraw').change(function() {
@@ -160,6 +165,11 @@ $(function() {
     function onTouchMove(e) {
         if (pointCollection)
             pointCollection.mousePos.set(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+    };
+    
+    function onTouchEnd(e) {
+        if (pointCollection)
+            pointCollection.mousePos.set(0, 0);
     };
 	
 	function timeout() {
