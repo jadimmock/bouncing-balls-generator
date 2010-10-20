@@ -1,4 +1,4 @@
-/**!
+/*!
  * A jQuery plugin to replace all matched <img> elements with its 
  * bouncy balls implementation. 
  * 
