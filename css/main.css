@@ -34,6 +34,28 @@ section, header {
 		margin: 0.5em 0;
 	}
 
+nav {
+	position: relative;
+	left: 125px;
+	width: 650px;
+	height: 1.4em;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: rgba(220,220,220,0.5);
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	text-align: center;
+	z-index: 1;
+}
+
+  nav label {
+  	display: inline;
+  }
+  
+  nav input[type="text"] {
+  	width: 300px;
+  }
+
 h1 {
 	font-size: 1.2em;	
 }
@@ -71,6 +93,7 @@ input[type=range] {
 
 canvas, aside {
 	position: absolute;
+	top: 0;
 	width: auto;
 }
 
@@ -78,6 +101,10 @@ aside {
 	width: 250px;
 	z-index: 1;
 	padding: 10px;
+}
+
+form#controls em {
+  margin: 0 8px 0 4px;	
 }
 
 #canvasNotSupportedMessage {
@@ -105,3 +132,14 @@ ul#browserLogos {
 		display: block;
 		text-align: center;
 	}
+
+#shareWith {
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	z-index: 1;
+}
+
+.twitter-share-button {
+	margin-bottom: -3px;
+}

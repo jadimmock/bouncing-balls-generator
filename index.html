@@ -7,10 +7,29 @@
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="js/modernizr-1.5.min.js"></script>
+		<script src="js/lib/modernizr-1.5.min.js"></script>
+		<script src="js/model/Vector.js"></script>
+		<script src="js/model/Point.js"></script>
+		<script src="js/model/PointCollection.js"></script>
+		<script src="js/model/ImagePointCollection.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 	<body>
+		<nav>
+			<form action="#" id="imageForm">
+					<label for="image">Select an image </label>
+					<select name="image" id="image">
+						<option value="facebook.jpg" data-imageSize="400" data-spacing="17" data-ballSize="3" data-variance="50">Facebook</option>
+						<option value="flickr.png" data-imageSize="700" data-spacing="14" data-ballSize="1">Flickr</option>
+						<option value="google.jpg" data-imageSize="600" data-spacing="14" data-ballSize="4" data-variance="80">Google</option>
+						<option value="ocado.jpg" data-imageSize="300" data-spacing="14" data-ballSize="4">Ocado</option>
+						<option value="xx.jpg" data-imageSize="300" data-spacing="14" data-ballSize="2" data-variance="80">The xx</option>
+						<option value="twitter.png" data-imageSize="700" data-spacing="14" data-ballSize="4">Twitter</option>
+					</select>
+					<label for="url">or enter a URL </label><input type="text" name="url" id="url" placeholder="Accepts jpg, gif and png files or data: urls" />
+					<input type="submit" value="update" />
+			</form>
+		</nav>
 		<aside>
 			<header>
 				<h1>Bouncing ball logos</h1>
@@ -23,27 +42,17 @@
 					<h2>Controls</h2>
 				</header>
 				<form id="controls" action="#">
-					<label for="image">Image</label>
-					<select name="image" id="image">
-						<option value="facebook.jpg" data-maxLength="24" data-spacing="17" data-size="3" data-variance="50">Facebook</option>
-						<option value="flickr.png" data-maxLength="68" data-spacing="14" data-size="1">Flickr</option>
-						<option value="google.jpg" data-maxLength="61" data-spacing="14" data-size="4" data-variance="80">Google</option>
-						<option value="ocado.jpg" data-maxLength="24" data-spacing="14" data-size="4">Ocado</option>
-						<option value="xx.jpg" data-maxLength="24" data-spacing="14" data-size="2" data-variance="80">The xx</option>
-						<option value="twitter.png" data-maxLength="68" data-spacing="14" data-size="4">Twitter</option>
-					</select>
-					
-					<label for="maxLength">Number of balls</label>
-					<input type="range" id="maxLength" name="maxLength" class="redraw" min="1" max="100" step="1" />
+					<label for="imageSize">Image size</label>
+					<input type="range" id="imageSize" name="imageSize" class="redraw" min="20" max="1000" step="1" />
 					
 					<label for="ballSize">Ball size</label>
-					<input type="range" id="ballSize" name="ballSize" class="redraw" min="1" max="20" step="1" />
+					<input type="range" id="ballSize" name="ballSize" class="redraw" min="1" max="15" step="1" />
 					
 					<label for="spacing">Spacing</label>
-					<input type="range" id="spacing" name="spacing" class="redraw" min="1" max="20" step="1" />
+					<input type="range" id="spacing" name="spacing" class="redraw" min="1" max="50" step="1" />
 					
 					<label for="variance">Variance</label>
-					<input type="range" id="variance" name="variance" class="redraw" min="0" max="100" step="1" />
+					<input type="range" id="variance" name="variance" class="redraw" min="0" max="200" step="1" />
 					
 					<label for="friction">Friction</label>
 					<input type="range" id="friction" name="friction" min="0" max="1.0" step="0.1" value="0.2" />
@@ -61,16 +70,20 @@
 				</ul>
 			</section>
 		</aside>
-		<section id="canvasNotSupportedMessage">
-			<header><h2>Doh! Your browser doesn't appear to support this experiment!</h2></header>
-			<p>Unfortunately this experiment requires your web browser to support the &lt;canvas&gt; element. Have no fear! There are many fine browsers you can use! How about giving one of the following a try:</p>
-			<ul id="browserLogos">
-				<li><a href="http://www.google.com/chrome" title="Visit Google Chrome's homepage"><img src="images/browserLogos/chrome.png" alt="Google Chrome"></a></li>
-				<li><a href="http://www.opera.com" title="Visit Opera's homepage"><img src="images/browserLogos/opera.png" alt="Opera"></a></li>
-				<li><a href="http://www.apple.com/safari" title="Visit Safari's homepage"><img src="images/browserLogos/safari.png" alt="Safari"></a></li>
-			</ul>
-			<p>(Thanks to <a href="http://paulirish.com/2010/high-res-browser-icons/">Paul Irish</a> for the icons)</p>
-		</section>
+		<section id="shareWith"> 
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="jadimmock">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+			<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://jadimmock.com/experiments/bouncingballs/index.html" layout="button_count"></fb:like> 
+		</section> 
+		<section id="canvasNotSupportedMessage"> 
+			<header><h2>Doh! Your browser doesn't appear to support this experiment!</h2></header> 
+			<p>Unfortunately this experiment requires your web browser to support the &lt;canvas&gt; element. Have no fear! There are many fine browsers you can use! How about giving one of the following a try:</p> 
+			<ul id="browserLogos"> 
+				<li><a href="http://www.google.com/chrome" title="Visit Google Chrome's homepage"><img src="images/browserLogos/chrome.png" alt="Google Chrome"></a></li> 
+				<li><a href="http://www.opera.com" title="Visit Opera's homepage"><img src="images/browserLogos/opera.png" alt="Opera"></a></li> 
+				<li><a href="http://www.apple.com/safari" title="Visit Safari's homepage"><img src="images/browserLogos/safari.png" alt="Safari"></a></li> 
+			</ul> 
+			<p>(Thanks to <a href="http://paulirish.com/2010/high-res-browser-icons/">Paul Irish</a> for the icons)</p> 
+		</section> 
 		<canvas id="c"></canvas>
 		
 		<script type="text/javascript">
