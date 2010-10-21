@@ -344,7 +344,7 @@
 	$.fn.bouncyBalls = function(options) {
 		
 		var canvas,
-			friction = options.friction || 0.2,
+			friction = options && options.friction || 0.2,
 			pointCollections = [],
 			canvasHeight,
 			canvasWidth;
@@ -412,7 +412,7 @@
 					width: $(document.body).width()
 				});
 			
-			if (options.zIndex) {
+			if (options && options.zIndex) {
 				canvas.css('z-index', options.zIndex);
 			}
 			
