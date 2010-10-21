@@ -67,6 +67,10 @@ $(function() {
 			e.preventDefault();
 		});
 		
+		$('#image').change(function() { 
+			$('#url').val(''); 
+		});
+		
 		$('#controls input.redraw').change(function() {
 			// Work out an offset to centre the image on the canvas
 			var xOrigin = ($(canvas).width() + 250) / 2,
